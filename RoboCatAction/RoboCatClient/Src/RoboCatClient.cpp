@@ -26,6 +26,12 @@ void RoboCatClient::Update()
 {
 	//for now, we don't simulate any movement on the client side
 	//we only move when the server tells us to move
+    for( auto obj : World::sInstance->GetGameObjects() )
+    {
+        if (obj->GetAsCat()) {
+            obj->GetAsCat()->SetLocation(obj->GetAsCat()->GetLocation() + obj->GetAsCat()->GetVelocity() * Timing::sInstance.GetDeltaTime());
+        }
+    }
 }
 
 void RoboCatClient::Read( InputMemoryBitStream& inInputStream )
