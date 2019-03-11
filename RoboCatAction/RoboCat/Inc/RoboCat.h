@@ -9,8 +9,9 @@ public:
 		ECRS_Color = 1 << 1,
 		ECRS_PlayerId = 1 << 2,
 		ECRS_Health = 1 << 3,
+		ECRS_Ammo = 1 << 4,
 
-		ECRS_AllState = ECRS_Pose | ECRS_Color | ECRS_PlayerId | ECRS_Health
+		ECRS_AllState = ECRS_Pose | ECRS_Color | ECRS_PlayerId | ECRS_Health | ECRS_Ammo
 	};
 
 
@@ -33,6 +34,9 @@ public:
 
 	void			SetVelocity( const Vector3& inVelocity )	{ mVelocity = inVelocity; }
 	const Vector3&	GetVelocity()						const	{ return mVelocity; }
+
+	//void			SetAmmoCount(int inAmmoCount) { mAmmoCount = inAmmoCount; }
+	int				GetAmmoCount()						const { return mAmmoCount; }
 
 	virtual uint32_t	Write( OutputMemoryBitStream& inOutputStream, uint32_t inDirtyState ) const override;
 
@@ -65,13 +69,9 @@ protected:
 
 	float				mThrustDir;
 	int					mHealth;
+	int					mAmmoCount;
 
 	bool				mIsShooting;
-
-	
-
-
-
 };
 
 typedef shared_ptr< RoboCat >	RoboCatPtr;

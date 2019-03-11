@@ -14,7 +14,8 @@ RoboCat::RoboCat() :
 	mThrustDir( 0.f ),
 	mPlayerId( 0 ),
 	mIsShooting( false ),
-	mHealth( 10 )
+	mHealth( 1 ), 
+	mAmmoCount( 1 )
 {
 	SetCollisionRadius( 0.5f );
 }
@@ -247,15 +248,20 @@ uint32_t RoboCat::Write( OutputMemoryBitStream& inOutputStream, uint32_t inDirty
 		inOutputStream.Write( (bool)false );
 	}
 
+	if (inDirtyState & ECRS_Ammo)
+	{
+		inOutputStream.Write((bool)true);
+		inOutputStream.Write(mAmmoCount, 4);
 
-	
+		writtenState |= ECRS_Ammo;
+	}
+	else
+	{
+		inOutputStream.Write((bool)false);
+	}
 
-
-	
 
 	return writtenState;
-	
-
 }
 
 

@@ -9,7 +9,9 @@ mBandwidthOrigin( 50.f, 10.f, 0.0f ),
 mRoundTripTimeOrigin( 50.f, 10.f, 0.0f ),
 mScoreOffset( 0.f, 50.f, 0.0f ),
 mHealthOffset( 1000, 10.f, 0.0f ),
-mHealth( 0 )
+mHealth( 0 ),
+mAmmoOffset( 1000, 50.f, 0.0f ),
+mAmmoCount( 0 )
 {
 	TTF_Init();
 	mFont = TTF_OpenFont( "../Assets/Carlito-Regular.TTF", 36 );
@@ -31,6 +33,16 @@ void HUD::Render()
 	RenderRoundTripTime();
 	RenderScoreBoard();
 	RenderHealth();
+	RenderAmmo();
+}
+
+void HUD::RenderAmmo()
+{
+	if (mAmmoCount >= 0)
+	{
+		string ammoString = StringUtils::Sprintf("Ammo %d", mAmmoCount);
+		RenderText(ammoString, mAmmoOffset, Colors::Red);
+	}
 }
 
 void HUD::RenderHealth()

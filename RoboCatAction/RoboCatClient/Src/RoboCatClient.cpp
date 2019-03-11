@@ -111,5 +111,22 @@ void RoboCatClient::Read( InputMemoryBitStream& inInputStream )
 		{
 			HUD::sInstance->SetPlayerHealth( mHealth );
 		}
-	}	
+	}
+
+	inInputStream.Read(stateBit);
+	if (stateBit)
+	{
+		mAmmoCount = 0; 
+		inInputStream.Read(mAmmoCount, 4);
+		readState |= ECRS_Ammo;
+	}
+
+	if (GetPlayerId() == NetworkManagerClient::sInstance->GetPlayerId())
+	{
+		if ((readState & ECRS_Ammo) >= 0)
+		{
+			HUD::sInstance->SetAmmoCount(mAmmoCount);
+			//RoboCat::sInstance->SetAmmoCount(mAmmoCount);
+		}
+	}
 }

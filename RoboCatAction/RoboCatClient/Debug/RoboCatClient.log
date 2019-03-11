@@ -1,5 +1,19 @@
-﻿  GraphicsDriver.cpp
+﻿  RoboCatClientPCH.cpp
+  YarnClient.cpp
+  Client.cpp
+  ClientMain.cpp
+  GraphicsDriver.cpp
   HUD.cpp
+  InputManager.cpp
+  NetworkManagerClient.cpp
+  RenderManager.cpp
+  ReplicationManagerClient.cpp
+  RoboCatClient.cpp
+  SpriteComponent.cpp
+  Texture.cpp
+  TextureManager.cpp
+  MouseClient.cpp
+  WindowManager.cpp
   Generating Code...
   RoboCatClient.vcxproj -> C:\Users\carto\Desktop\ICS167Game\ICS167-RoboCats\RoboCatAction\Debug\RoboCatClient.exe
   Copying SDL DLLs...

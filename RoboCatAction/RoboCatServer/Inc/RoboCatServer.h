@@ -14,6 +14,8 @@ public:
 
 	void SetCatControlType( ECatControlType inCatControlType ) { mCatControlType = inCatControlType; }
 
+	void IncreaseAmmo(int inPlayerId);
+
 	void TakeDamage( int inDamagingPlayerId );
 
 protected:

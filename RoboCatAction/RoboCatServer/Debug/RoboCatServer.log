@@ -1,4 +1,14 @@
-﻿  RoboCatServer.vcxproj -> C:\Users\carto\Desktop\ICS167Game\ICS167-RoboCats\RoboCatAction\Debug\RoboCatServer.exe
+﻿  RoboCatServerPCH.cpp
+  YarnServer.cpp
+  ClientProxy.cpp
+  ReplicationManagerServer.cpp
+  Server.cpp
+  ServerMain.cpp
+  NetworkManagerServer.cpp
+  RoboCatServer.cpp
+  MouseServer.cpp
+  Generating Code...
+  RoboCatServer.vcxproj -> C:\Users\carto\Desktop\ICS167Game\ICS167-RoboCats\RoboCatAction\Debug\RoboCatServer.exe
   Copying SDL DLLs...
   C:\Users\carto\Desktop\ICS167Game\ICS167-RoboCats\RoboCatAction\RoboCatServer\\..\SDL\lib\win\x86\libfreetype-6.dll
   C:\Users\carto\Desktop\ICS167Game\ICS167-RoboCats\RoboCatAction\RoboCatServer\\..\SDL\lib\win\x86\libogg-0.dll

@@ -47,7 +47,7 @@ void RoboCatServer::Update()
 void RoboCatServer::HandleShooting()
 {
 	float time = Timing::sInstance.GetFrameStartTime();
-	if( mIsShooting && Timing::sInstance.GetFrameStartTime() > mTimeOfNextShot )
+	if( mIsShooting && Timing::sInstance.GetFrameStartTime() > mTimeOfNextShot && (mAmmoCount == 1))
 	{
 		//not exact, but okay
 		mTimeOfNextShot = time + mTimeBetweenShots;
@@ -55,7 +55,15 @@ void RoboCatServer::HandleShooting()
 		//fire!
 		YarnPtr yarn = std::static_pointer_cast< Yarn >( GameObjectRegistry::sInstance->CreateGameObject( 'YARN' ) );
 		yarn->InitFromShooter( this );
+		--mAmmoCount;
 	}
+	NetworkManagerServer::sInstance->SetStateDirty(GetNetworkId(), ECRS_Ammo);
+}
+
+void RoboCatServer::IncreaseAmmo(int inPlayerId)
+{
+	mAmmoCount++;
+	NetworkManagerServer::sInstance->SetStateDirty(GetNetworkId(), ECRS_Ammo);
 }
 
 void RoboCatServer::TakeDamage( int inDamagingPlayerId )
