@@ -1,23 +1,23 @@
 ﻿  RoboCatServerPCH.cpp
+  YarnServer.cpp
   ClientProxy.cpp
-  MouseServer.cpp
-  NetworkManagerServer.cpp
   ReplicationManagerServer.cpp
-  RoboCatServer.cpp
   Server.cpp
   ServerMain.cpp
-  YarnServer.cpp
+  NetworkManagerServer.cpp
+  RoboCatServer.cpp
+  MouseServer.cpp
   Generating Code...
-  RoboCatServer.vcxproj -> C:\Users\dartr\OneDrive\Documents\unity\ICS167-RoboCats\RoboCatAction\Debug\RoboCatServer.exe
+  RoboCatServer.vcxproj -> C:\Users\carto\Desktop\ICS167Game\ICS167-RoboCats\RoboCatAction\Debug\RoboCatServer.exe
   Copying SDL DLLs...
-  C:\Users\dartr\OneDrive\Documents\unity\ICS167-RoboCats\RoboCatAction\RoboCatServer\\..\SDL\lib\win\x86\libfreetype-6.dll
-  C:\Users\dartr\OneDrive\Documents\unity\ICS167-RoboCats\RoboCatAction\RoboCatServer\\..\SDL\lib\win\x86\libogg-0.dll
-  C:\Users\dartr\OneDrive\Documents\unity\ICS167-RoboCats\RoboCatAction\RoboCatServer\\..\SDL\lib\win\x86\libpng16-16.dll
-  C:\Users\dartr\OneDrive\Documents\unity\ICS167-RoboCats\RoboCatAction\RoboCatServer\\..\SDL\lib\win\x86\libvorbis-0.dll
-  C:\Users\dartr\OneDrive\Documents\unity\ICS167-RoboCats\RoboCatAction\RoboCatServer\\..\SDL\lib\win\x86\libvorbisfile-3.dll
-  C:\Users\dartr\OneDrive\Documents\unity\ICS167-RoboCats\RoboCatAction\RoboCatServer\\..\SDL\lib\win\x86\SDL2.dll
-  C:\Users\dartr\OneDrive\Documents\unity\ICS167-RoboCats\RoboCatAction\RoboCatServer\\..\SDL\lib\win\x86\SDL2_image.dll
-  C:\Users\dartr\OneDrive\Documents\unity\ICS167-RoboCats\RoboCatAction\RoboCatServer\\..\SDL\lib\win\x86\SDL2_mixer.dll
-  C:\Users\dartr\OneDrive\Documents\unity\ICS167-RoboCats\RoboCatAction\RoboCatServer\\..\SDL\lib\win\x86\SDL2_ttf.dll
-  C:\Users\dartr\OneDrive\Documents\unity\ICS167-RoboCats\RoboCatAction\RoboCatServer\\..\SDL\lib\win\x86\zlib1.dll
+  C:\Users\carto\Desktop\ICS167Game\ICS167-RoboCats\RoboCatAction\RoboCatServer\\..\SDL\lib\win\x86\libfreetype-6.dll
+  C:\Users\carto\Desktop\ICS167Game\ICS167-RoboCats\RoboCatAction\RoboCatServer\\..\SDL\lib\win\x86\libogg-0.dll
+  C:\Users\carto\Desktop\ICS167Game\ICS167-RoboCats\RoboCatAction\RoboCatServer\\..\SDL\lib\win\x86\libpng16-16.dll
+  C:\Users\carto\Desktop\ICS167Game\ICS167-RoboCats\RoboCatAction\RoboCatServer\\..\SDL\lib\win\x86\libvorbis-0.dll
+  C:\Users\carto\Desktop\ICS167Game\ICS167-RoboCats\RoboCatAction\RoboCatServer\\..\SDL\lib\win\x86\libvorbisfile-3.dll
+  C:\Users\carto\Desktop\ICS167Game\ICS167-RoboCats\RoboCatAction\RoboCatServer\\..\SDL\lib\win\x86\SDL2.dll
+  C:\Users\carto\Desktop\ICS167Game\ICS167-RoboCats\RoboCatAction\RoboCatServer\\..\SDL\lib\win\x86\SDL2_image.dll
+  C:\Users\carto\Desktop\ICS167Game\ICS167-RoboCats\RoboCatAction\RoboCatServer\\..\SDL\lib\win\x86\SDL2_mixer.dll
+  C:\Users\carto\Desktop\ICS167Game\ICS167-RoboCats\RoboCatAction\RoboCatServer\\..\SDL\lib\win\x86\SDL2_ttf.dll
+  C:\Users\carto\Desktop\ICS167Game\ICS167-RoboCats\RoboCatAction\RoboCatServer\\..\SDL\lib\win\x86\zlib1.dll
   10 File(s) copied

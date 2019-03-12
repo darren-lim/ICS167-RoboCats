@@ -89,7 +89,7 @@ void Yarn::InitFromShooter( RoboCat* inShooter )
 
 	Vector3 forward = inShooter->GetForwardVector();
 	SetVelocity( inShooter->GetVelocity() + forward * mMuzzleSpeed );
-	SetLocation( inShooter->GetLocation() /* + forward * 0.55f */ );
+	SetLocation( inShooter->GetLocation()  - Vector3(0.03,0,0)/*+ forward * 0.55f*/  );
 
 	SetRotation( inShooter->GetRotation() );
 }

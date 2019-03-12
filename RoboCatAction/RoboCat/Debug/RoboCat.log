@@ -1,1 +1,27 @@
-﻿  RoboCat.vcxproj -> C:\Users\dartr\OneDrive\Documents\unity\ICS167-RoboCats\RoboCatAction\RoboCat\Bin\Debug\RoboCat.lib
+﻿  RoboCatPCH.cpp
+  Yarn.cpp
+  Engine.cpp
+  GameObjectRegistry.cpp
+  InputState.cpp
+  MemoryBitStream.cpp
+  Move.cpp
+  MoveList.cpp
+  NetworkManager.cpp
+  RoboMath.cpp
+  ScoreBoardManager.cpp
+  RoboCat.cpp
+  SocketAddress.cpp
+  SocketAddressFactory.cpp
+  SocketUtil.cpp
+c:\users\carto\desktop\ics167game\ics167-robocats\robocataction\robocat\src\socketutil.cpp(90): warning C4100: 'ioNaxNfds': unreferenced formal parameter
+  StringUtils.cpp
+  TCPSocket.cpp
+  Timing.cpp
+  GameObject.cpp
+  Mouse.cpp
+  UDPSocket.cpp
+  Generating Code...
+  Compiling...
+  World.cpp
+  Generating Code...
+  RoboCat.vcxproj -> C:\Users\carto\Desktop\ICS167Game\ICS167-RoboCats\RoboCatAction\RoboCat\Bin\Debug\RoboCat.lib
