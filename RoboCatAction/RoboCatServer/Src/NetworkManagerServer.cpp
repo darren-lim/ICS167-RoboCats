@@ -7,7 +7,8 @@ NetworkManagerServer::NetworkManagerServer() :
 	mNewPlayerId( 1 ),
 	mNewNetworkId( 1 ),
 	mTimeBetweenStatePackets( 0.033f ),
-	mClientDisconnectTimeout( 3.f )
+	mClientDisconnectTimeout( 3.f ),
+	mAmmoCrateCount(10)
 {
 }
 
@@ -308,5 +309,21 @@ void NetworkManagerServer::SetStateDirty( int inNetworkId, uint32_t inDirtyState
 	{
 		pair.second->GetReplicationManagerServer().SetStateDirty( inNetworkId, inDirtyState );
 	}
+}
+
+bool NetworkManagerServer::IsAmmoZero()
+{
+	if (mAmmoCrateCount == 0) {
+		return true;
+	}
+	return false;
+}
+
+void NetworkManagerServer::DecrementAmmoCrateCount() {
+	mAmmoCrateCount--;
+}
+
+void NetworkManagerServer::ResetAmmoCrateCount() {
+	mAmmoCrateCount = 10;
 }
 

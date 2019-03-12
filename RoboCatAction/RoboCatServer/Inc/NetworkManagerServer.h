@@ -20,6 +20,10 @@ public:
 
 			ClientProxyPtr	GetClientProxy( int inPlayerId ) const;
 
+			bool			IsAmmoZero();
+			void			DecrementAmmoCrateCount();
+			void			ResetAmmoCrateCount();
+
 private:
 			NetworkManagerServer();
 
@@ -53,6 +57,8 @@ private:
 	float			mTimeOfLastSatePacket;
 	float			mTimeBetweenStatePackets;
 	float			mClientDisconnectTimeout;
+
+	int				mAmmoCrateCount;
 };
 
 

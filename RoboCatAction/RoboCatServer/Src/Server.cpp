@@ -74,9 +74,6 @@ void Server::SetupWorld()
 {
 	//spawn some random mice
 	CreateRandomMice( 10 );
-	
-	//spawn more random mice!
-	CreateRandomMice( 10 );
 }
 
 void Server::DoFrame()
@@ -86,6 +83,11 @@ void Server::DoFrame()
 	NetworkManagerServer::sInstance->CheckForDisconnects();
 
 	NetworkManagerServer::sInstance->RespawnCats();
+
+	if (NetworkManagerServer::sInstance->IsAmmoZero()) {
+		SetupWorld();
+		NetworkManagerServer::sInstance->ResetAmmoCrateCount();
+	}
 
 	Engine::DoFrame();
 

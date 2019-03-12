@@ -7,6 +7,7 @@ MouseServer::MouseServer()
 
 void MouseServer::HandleDying()
 {
+	NetworkManagerServer::sInstance->DecrementAmmoCrateCount();
 	NetworkManagerServer::sInstance->UnregisterGameObject( this );
 }
 
