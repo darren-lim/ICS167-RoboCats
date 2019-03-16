@@ -118,3 +118,13 @@ void InputManager::Update()
 		mPendingMove = &SampleInputAsMove();
 	}
 }
+
+void InputManager::StoreLastProcessedMoveList(MoveList mList)
+{
+	mLastProcessedMoveList = mList;
+}
+
+void InputManager::ClearLastProcessedMoveList()
+{
+	mLastProcessedMoveList.Clear();
+}

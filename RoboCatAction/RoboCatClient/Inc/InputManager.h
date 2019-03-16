@@ -17,6 +17,10 @@ public:
 
 	void				Update();
 
+	void				StoreLastProcessedMoveList(MoveList mList);
+	MoveList			GetLastProcessedMoveList()		const { return mLastProcessedMoveList; }
+	void				ClearLastProcessedMoveList();
+
 private:
 
 	InputState							mCurrentState;
@@ -27,6 +31,7 @@ private:
 	const Move&			SampleInputAsMove();
 	
 	MoveList		mMoveList;
+	MoveList		mLastProcessedMoveList;
 	float			mNextTimeToSampleInput;
 	const Move*		mPendingMove;
 };

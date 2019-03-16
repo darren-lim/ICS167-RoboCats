@@ -52,18 +52,19 @@ void RoboCatClient::Update()
 	}*/
 	if (mLastSavedServerTimestamp == InputManager::sInstance->GetMoveList().GetLastProcessedMove())
 	{
-		//for (auto obj : World::sInstance->GetGameObjects())
-		//{
-		//	if (obj->GetAsCat())
-		//	{
-		//		obj->GetAsCat()->SetLocation(obj->GetAsCat()->GetLocation() + obj->GetAsCat()->GetVelocity() * Timing::sInstance.GetDeltaTime());
-		//		HUD::sInstance->SetPlayerHealth(10);
-		//	}
-		//}
+		for (auto obj : World::sInstance->GetGameObjects())
+		{
+			if (obj->GetAsCat())
+			{
+				obj->GetAsCat()->SetLocation(obj->GetAsCat()->GetLocation() + obj->GetAsCat()->GetVelocity() * Timing::sInstance.GetDeltaTime());
+				HUD::sInstance->SetPlayerHealth(10);
+			}
+		}
 	}
 	else
 	{
-		MoveList& moveList = InputManager::sInstance->GetMoveList();
+		//MoveList& moveList = InputManager::sInstance->GetMoveList();
+		MoveList& moveList = InputManager::sInstance->GetLastProcessedMoveList();
 		for (const Move& unprocessedMove : moveList)
 		{
 			const InputState& currentState = unprocessedMove.GetInputState();

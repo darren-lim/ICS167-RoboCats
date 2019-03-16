@@ -1,5 +1,4 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\Microsoft.CppClean.targets(76,5): warning : The process cannot access the file 'c:\users\carto\desktop\ics167game\ics167-robocats\robocataction\robocatserver\debug\robocatserver.tlog\cl.write.1.tlog' because it is being used by another process.
-  RoboCatServerPCH.cpp
+﻿  RoboCatServerPCH.cpp
   YarnServer.cpp
   ClientProxy.cpp
   ReplicationManagerServer.cpp
