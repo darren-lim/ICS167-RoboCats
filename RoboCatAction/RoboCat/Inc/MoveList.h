@@ -15,7 +15,6 @@ public:
 			void	RemovedProcessedMoves( float inLastMoveProcessedOnServerTimestamp );
 			void	SaveLastProcessedMove( float inLastMoveProcessedOnServerTimestamp );
 
-	//std::vector<std::pair<Move, float>> GetLastProcessedMove()	const { /*return mLastProcessedMoveTime; return mLastProcessedMove;*/ }
 	float			GetLastProcessedMove()	 { return mLastProcessedMoveTimestamp; }
 
 	float			GetLastMoveTimestamp()	const	{ return mLastMoveTimestamp; } 
@@ -36,8 +35,6 @@ private:
 	float			mLastMoveTimestamp;
 	deque< Move >	mMoves;
 
-	//Move			mLastProcessedMove;
-	//std::vector<std::pair<Move, float>> mLastProcessedMoveTime;
 	float			mLastProcessedMoveTimestamp;
 
 

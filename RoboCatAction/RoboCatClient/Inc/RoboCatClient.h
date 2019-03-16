@@ -18,7 +18,5 @@ private:
 	
 	SpriteComponentPtr	mSpriteComponent;
 
-	//Move	mClientsLastProcessedMove;
-	//std::vector<std::pair<Move, float>>				mClientsLastProcessedMove;
 	float				mLastSavedServerTimestamp;
 };

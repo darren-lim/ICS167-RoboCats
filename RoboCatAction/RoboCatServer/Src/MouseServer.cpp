@@ -21,8 +21,6 @@ bool MouseServer::HandleCollisionWithCat( RoboCat* inCat )
 		static_cast<RoboCatServer*>(inCat)->IncreaseAmmo(inCat->GetPlayerId());
 	}
 
-	//ScoreBoardManager::sInstance->IncScore( inCat->GetPlayerId(), 1 );
-
 	return false;
 }
 

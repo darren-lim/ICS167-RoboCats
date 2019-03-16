@@ -35,7 +35,6 @@ public:
 	void			SetVelocity( const Vector3& inVelocity )	{ mVelocity = inVelocity; }
 	const Vector3&	GetVelocity()						const	{ return mVelocity; }
 
-	//void			SetAmmoCount(int inAmmoCount) { mAmmoCount = inAmmoCount; }
 	int				GetAmmoCount()						const { return mAmmoCount; }
 
 	virtual uint32_t	Write( OutputMemoryBitStream& inOutputStream, uint32_t inDirtyState ) const override;

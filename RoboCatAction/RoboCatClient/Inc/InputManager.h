@@ -18,7 +18,7 @@ public:
 	void				Update();
 
 	void				StoreLastProcessedMoveList(MoveList mList);
-	MoveList			GetLastProcessedMoveList()		const { return mLastProcessedMoveList; }
+	MoveList			GetLastProcessedMoveList()	{ return mLastProcessedMoveList; }
 	void				ClearLastProcessedMoveList();
 
 private:
