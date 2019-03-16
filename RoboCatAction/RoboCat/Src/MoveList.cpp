@@ -29,3 +29,14 @@ void	MoveList::RemovedProcessedMoves( float inLastMoveProcessedOnServerTimestamp
 		mMoves.pop_front();
 	}
 }
+
+void MoveList::SaveLastProcessedMove(float inLastMoveProcessedOnServerTimestamp)
+{
+	while (mLastProcessedMoveTimestamp < inLastMoveProcessedOnServerTimestamp)
+	{
+		//mLastProcessedMove = GetLatestMove();
+		//mLastProcessedMoveTime.pop_back();
+		//mLastProcessedMoveTime.push_back(std::make_pair(GetLatestMove(), inLastMoveProcessedOnServerTimestamp));
+		mLastProcessedMoveTimestamp = inLastMoveProcessedOnServerTimestamp;
+	}
+}

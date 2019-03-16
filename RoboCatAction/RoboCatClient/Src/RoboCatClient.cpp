@@ -8,6 +8,8 @@ RoboCatClient::RoboCatClient() :
 {
 	mSpriteComponent.reset( new SpriteComponent( this ) );
 	mSpriteComponent->SetTexture( TextureManager::sInstance->GetTexture( "cat" ) );
+	//mClientsLastProcessedMove = InputManager::sInstance->GetMoveList().GetLastProcessedMove();
+	mLastSavedServerTimestamp = InputManager::sInstance->GetMoveList().GetLastProcessedMove();
 }
 
 void RoboCatClient::HandleDying()
@@ -26,12 +28,51 @@ void RoboCatClient::Update()
 {
 	//for now, we don't simulate any movement on the client side
 	//we only move when the server tells us to move
-    for( auto obj : World::sInstance->GetGameObjects() )
-    {
-        if (obj->GetAsCat()) {
-            obj->GetAsCat()->SetLocation(obj->GetAsCat()->GetLocation() + obj->GetAsCat()->GetVelocity() * Timing::sInstance.GetDeltaTime());
-        }
-    }
+	//for (auto obj : World::sInstance->GetGameObjects())
+	//{
+	//	if (obj->GetAsCat())
+	//	{
+	//		obj->GetAsCat()->SetLocation(obj->GetAsCat()->GetLocation() + obj->GetAsCat()->GetVelocity() * Timing::sInstance.GetDeltaTime());
+	//	}
+	//}
+	/*if (mClientsLastProcessedMove.back == InputManager::sInstance->GetMoveList().GetLastProcessedMove().back)
+	{
+		for (auto obj : World::sInstance->GetGameObjects())
+		{
+			if (obj->GetAsCat())
+			{
+				obj->GetAsCat()->SetLocation(obj->GetAsCat()->GetLocation() + obj->GetAsCat()->GetVelocity() * Timing::sInstance.GetDeltaTime());
+			}
+		}
+	}
+	else
+	{
+		mClientsLastProcessedMove.pop_back();
+		mClientsLastProcessedMove = InputManager::sInstance->GetMoveList().GetLastProcessedMove();
+	}*/
+	if (mLastSavedServerTimestamp == InputManager::sInstance->GetMoveList().GetLastProcessedMove())
+	{
+		//for (auto obj : World::sInstance->GetGameObjects())
+		//{
+		//	if (obj->GetAsCat())
+		//	{
+		//		obj->GetAsCat()->SetLocation(obj->GetAsCat()->GetLocation() + obj->GetAsCat()->GetVelocity() * Timing::sInstance.GetDeltaTime());
+		//		HUD::sInstance->SetPlayerHealth(10);
+		//	}
+		//}
+	}
+	else
+	{
+		MoveList& moveList = InputManager::sInstance->GetMoveList();
+		for (const Move& unprocessedMove : moveList)
+		{
+			const InputState& currentState = unprocessedMove.GetInputState();
+			float deltaTime = unprocessedMove.GetDeltaTime();
+			ProcessInput(deltaTime, currentState);
+			SimulateMovement(deltaTime);
+		}
+		mLastSavedServerTimestamp = InputManager::sInstance->GetMoveList().GetLastProcessedMove();
+	}
 }
 
 void RoboCatClient::Read( InputMemoryBitStream& inInputStream )

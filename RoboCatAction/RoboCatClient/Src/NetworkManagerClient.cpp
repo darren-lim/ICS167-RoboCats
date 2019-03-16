@@ -124,8 +124,8 @@ void NetworkManagerClient::ReadLastMoveProcessedOnServerTimestamp( InputMemoryBi
 		mLastRoundTripTime = rtt;
 		mAvgRoundTripTime.Update( rtt );
 
+		InputManager::sInstance->GetMoveList().SaveLastProcessedMove( mLastMoveProcessedByServerTimestamp );
 		InputManager::sInstance->GetMoveList().RemovedProcessedMoves( mLastMoveProcessedByServerTimestamp );
-
 	}
 }
 
